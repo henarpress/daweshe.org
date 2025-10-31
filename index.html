@@ -202,20 +202,62 @@
             height: clamp(1.5rem, 3.5vw, 2.5rem);
         }
 
+        /* Responsive article card sizing */
         .article-card {
-            width: clamp(280px, 25vw, 380px);
+            width: 280px;
         }
 
         .article-image-container {
-            height: clamp(320px, 33vw, 500px);
+            height: 360px;
         }
 
-        @media (max-width: 640px) {
+        /* Tablet and small desktop */
+        @media (min-width: 1024px) {
             .article-card {
-                width: 280px;
+                width: 340px;
             }
             .article-image-container {
-                height: 360px;
+                height: 440px;
+            }
+        }
+
+        /* Medium desktop */
+        @media (min-width: 1280px) {
+            .article-card {
+                width: 380px;
+            }
+            .article-image-container {
+                height: 500px;
+            }
+        }
+
+        /* Large desktop */
+        @media (min-width: 1536px) {
+            .article-card {
+                width: 440px;
+            }
+            .article-image-container {
+                height: 580px;
+            }
+        }
+
+        /* Extra large screens */
+        @media (min-width: 1920px) {
+            .article-card {
+                width: 500px;
+            }
+            .article-image-container {
+                height: 660px;
+            }
+        }
+
+        /* Ultra wide screens */
+        @media (min-width: 2560px) {
+            .article-card {
+                width: 580px;
+            }
+            .article-image-container {
+                height: 760px;
             }
         }
     </style>
@@ -320,10 +362,10 @@
                         <img src="https://placehold.co/600x800/e2e8f0/334155?text=Cover+Art" alt="Cover art for The City That Dreams in Our Bones" class="w-full h-full object-cover">
                     </a>
                     <h3 class="font-serif text-xs text-gray-500 uppercase tracking-widest">Fiction</h3>
-                    <h2 class="font-serif text-lg md:text-xl mt-1 mb-1 leading-tight">
+                    <h2 class="font-serif text-lg md:text-xl lg:text-2xl mt-1 mb-1 leading-tight">
                         <a href="#" class="hover:underline">The City That Dreams in Our Bones</a>
                     </h2>
-                    <p class="text-sm text-gray-600">by Gloria Ogo</p>
+                    <p class="text-sm lg:text-base text-gray-600">by Gloria Ogo</p>
                 </article>
 
                 <article class="flex-shrink-0 article-card snap-start" data-category="poetry" data-title="Point of Focus" data-author="Aliseen Anne">
@@ -331,10 +373,10 @@
                         <img src="https://placehold.co/600x800/d1d5db/1f2937?text=Cover+Art" alt="Cover art for Point of Focus" class="w-full h-full object-cover">
                     </a>
                     <h3 class="font-serif text-xs text-gray-500 uppercase tracking-widest">Poetry</h3>
-                    <h2 class="font-serif text-lg md:text-xl mt-1 mb-1 leading-tight">
+                    <h2 class="font-serif text-lg md:text-xl lg:text-2xl mt-1 mb-1 leading-tight">
                         <a href="#" class="hover:underline">Point of Focus</a>
                     </h2>
-                    <p class="text-sm text-gray-600">by Aliseen Anne</p>
+                    <p class="text-sm lg:text-base text-gray-600">by Aliseen Anne</p>
                 </article>
 
                 <article class="flex-shrink-0 article-card snap-start" data-category="nonfiction" data-title="The Fourteenth Amendment" data-author="Mervyn Seivwright">
@@ -342,19 +384,19 @@
                         <img src="https://placehold.co/600x800/9ca3af/111827?text=Cover+Art" alt="Cover art for Fourteenth Amendment" class="w-full h-full object-cover">
                     </a>
                     <h3 class="font-serif text-xs text-gray-500 uppercase tracking-widest">Nonfiction</h3>
-                    <h2 class="font-serif text-lg md:text-xl mt-1 mb-1 leading-tight">
+                    <h2 class="font-serif text-lg md:text-xl lg:text-2xl mt-1 mb-1 leading-tight">
                         <a href="#" class="hover:underline">The Fourteenth Amendment</a>
                     </h2>
-                    <p class="text-sm text-gray-600">by Mervyn Seivwright</p>
+                    <p class="text-sm lg:text-base text-gray-600">by Mervyn Seivwright</p>
                 </article>
 
-                <article class="border border-gray-200 p-5 flex flex-col justify-center flex-shrink-0 article-card article-image-container snap-start" data-category="interview" data-title="On Craft and Creation" data-author="Jane Doe">
+                <article class="border border-gray-200 p-5 lg:p-6 xl:p-8 flex flex-col justify-center flex-shrink-0 article-card article-image-container snap-start" data-category="interview" data-title="On Craft and Creation" data-author="Jane Doe">
                     <h3 class="font-serif text-xs text-gray-500 uppercase tracking-widest">Interview</h3>
-                    <h2 class="font-serif text-lg md:text-xl mt-1 mb-1 leading-tight">
+                    <h2 class="font-serif text-lg md:text-xl lg:text-2xl mt-1 mb-1 leading-tight">
                         <a href="#" class="hover:underline">On Craft and Creation</a>
                     </h2>
-                    <p class="text-sm text-gray-600 mb-3">with Author Jane Doe</p>
-                    <p class="text-sm text-gray-700 leading-relaxed">"The process is less about finding the right words and more about listening to..."</p>
+                    <p class="text-sm lg:text-base text-gray-600 mb-3">with Author Jane Doe</p>
+                    <p class="text-sm lg:text-base text-gray-700 leading-relaxed">"The process is less about finding the right words and more about listening to..."</p>
                 </article>
 
                 <article class="flex-shrink-0 article-card snap-start" data-category="poetry" data-title="Betrayal of Spirit" data-author="John Smith">
@@ -362,10 +404,10 @@
                         <img src="https://placehold.co/600x800/f3f4f6/4b5563?text=Cover+Art" alt="Cover art for New Release" class="w-full h-full object-cover">
                     </a>
                     <h3 class="font-serif text-xs text-gray-500 uppercase tracking-widest">Poetry</h3>
-                    <h2 class="font-serif text-lg md:text-xl mt-1 mb-1 leading-tight">
+                    <h2 class="font-serif text-lg md:text-xl lg:text-2xl mt-1 mb-1 leading-tight">
                         <a href="#" class="hover:underline">Betrayal of Spirit</a>
                     </h2>
-                    <p class="text-sm text-gray-600">by John Smith</p>
+                    <p class="text-sm lg:text-base text-gray-600">by John Smith</p>
                 </article>
 
                 <article class="flex-shrink-0 article-card snap-start" data-category="fiction" data-title="Real Fruit" data-author="Emily White">
@@ -373,10 +415,10 @@
                         <img src="https://placehold.co/600x800/e5e7eb/374151?text=Cover+Art" alt="Cover art for New Release" class="w-full h-full object-cover">
                     </a>
                     <h3 class="font-serif text-xs text-gray-500 uppercase tracking-widest">Fiction</h3>
-                    <h2 class="font-serif text-lg md:text-xl mt-1 mb-1 leading-tight">
+                    <h2 class="font-serif text-lg md:text-xl lg:text-2xl mt-1 mb-1 leading-tight">
                         <a href="#" class="hover:underline">Real Fruit</a>
                     </h2>
-                    <p class="text-sm text-gray-600">by Emily White</p>
+                    <p class="text-sm lg:text-base text-gray-600">by Emily White</p>
                 </article>
             </div>
         </main>
