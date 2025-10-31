@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>On Craft and Creation - Interview with Jane Doe | Daweshê</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,700;1,400&family=Oswald:wght@500;600;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5;
+            color: #1a1a1a;
+        }
+        
+        .font-serif {
+            font-family: 'Lora', serif;
+        }
+        .font-oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+        .font-amiri {
+            font-family: 'Amiri', serif;
+        }
+
+        .interview-q {
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .interview-a {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            margin: 0.1rem 0.15rem 0 0;
+            font-weight: 700;
+            font-family: 'Lora', serif;
+        }
+
+        .back-link {
+            transition: transform 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link:hover {
+            transform: translateX(-4px);
+        }
+
+        .menu-line {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        .menu-open .line-1 {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .menu-open .line-2 {
+            opacity: 0;
+        }
+        .menu-open .line-3 {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        #menu-overlay {
+            transform: translateY(-100%);
+            transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            z-index: 40;
+        }
+        #menu-overlay.open {
+            transform: translateY(0);
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background-color: #1a1a1a;
+            margin: 3rem 0;
+        }
+
+        blockquote {
+            border-left: 3px solid #1a1a1a;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #374151;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<div class="border-8 border-black min-h-screen bg-[#f5f5f5]">
+    <header class="z-50 border-b border-gray-300 bg-[#f5f5f5] sticky top-0">
+        <div class="px-6 md:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center gap-2.5">
+                    <a href="index.html" class="flex items-center gap-2.5 hover:opacity-70 transition-opacity">
+                        <span class="text-3xl md:text-5xl font-oswald font-semibold tracking-wide uppercase text-black">
+                            DAWESHÊ
+                        </span>
+                        <img src="sun.png" alt="Kurdish Sun" class="h-8 md:h-10 w-auto">
+                        <span class="text-3xl md:text-5xl font-amiri font-bold text-black" style="letter-spacing: 0.02em;" dir="rtl">
+                            داوەشێی
+                        </span>
+                    </a>
+                </div>
+                
+                <div class="flex items-center">
+                    <button id="menu-btn" class="z-50 space-y-2" aria-label="Open Menu">
+                        <span class="block w-8 h-0.5 bg-black menu-line line-1"></span>
+                        <span class="block w-8 h-0.5 bg-black menu-line line-2"></span>
+                        <span class="block w-8 h-0.5 bg-black menu-line line-3"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="menu-overlay" class="fixed inset-0 bg-[#111111] text-white flex items-center justify-center">
+        <nav class="text-center">
+            <ul class="space-y-6">
+                <li><a href="#" class="text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">Masthead</a></li>
+                <li><a href="#" class="text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">About</a></li>
+                <li><a href="#" class="text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">Issues</a></li>
+                <li><a href="#" class="text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">People</a></li>
+                <li><a href="#" class="text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">Submissions</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <article class="max-w-3xl mx-auto px-6 md:px-8">
+        <a href="index.html" class="back-link text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors mb-8 inline-block">
+           
+        </a>
+
+        <div class="mb-12">
+            <p class="font-serif text-xs text-gray-500 uppercase tracking-widest mb-4">Interview</p>
+            <h1 class="font-serif text-5xl md:text-6xl leading-tight mb-6">On Craft and Creation</h1>
+            <p class="text-xl text-gray-600 mb-2">A conversation with Jane Doe</p>
+            <p class="text-sm text-gray-500 uppercase tracking-wide">By The Editors • Fall 2025</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="prose prose-lg max-w-none">
+            <p class="drop-cap text-lg leading-relaxed text-gray-700">
+                Jane Doe is an acclaimed novelist and short story writer whose work has appeared in numerous literary journals and anthologies. Her debut novel, "Whispers in the Margins," won the National Book Award and was shortlisted for the Pulitzer Prize. In this conversation, we discuss her creative process, the evolution of her craft, and what it means to write authentically in today's literary landscape.
+            </p>
+
+            <div class="interview-content mt-12">
+                <p class="interview-q font-serif text-xl">Let's start with the basics. How do you approach a new story or novel?</p>
+                <p class="interview-a text-gray-700">
+                    The process is less about finding the right words and more about listening to what wants to be said. I often begin with an image or a feeling—something ephemeral that I can't quite articulate yet. It's like catching a glimpse of something in your peripheral vision. You know it's there, but when you turn to look directly at it, it shifts or disappears. My job is to sit with that discomfort long enough until the image or feeling solidifies into something I can work with.
+                </p>
+
+                <p class="interview-q font-serif text-xl">That sounds like a very intuitive process. Do you outline, or do you prefer to discover the story as you write?</p>
+                <p class="interview-a text-gray-700">
+                    I've tried both approaches, and honestly, neither works perfectly for me. What I've learned is that every project demands its own method. Some stories announce themselves fully formed—I know the beginning, middle, and end before I write a single word. Others are more mysterious. They require excavation, a kind of archeological dig where I'm uncovering something that already exists but is buried beneath layers of sediment. For those stories, outlining would be counterproductive. It would be like trying to map terrain you've never visited.
+                </p>
+
+                <blockquote class="font-serif text-xl">
+                    "Writing is not about control. It's about surrender—learning when to guide the narrative and when to let it guide you."
+                </blockquote>
+
+                <p class="interview-q font-serif text-xl">You've spoken before about the importance of revision. Can you talk about what that process looks like for you?</p>
+                <p class="interview-a text-gray-700">
+                    Revision is where the real writing happens. The first draft is just me telling myself the story. It's rough, often incoherent, filled with contradictions and dead ends. But that's okay—it's supposed to be. The first draft gives me the raw material. Then, in revision, I can step back and see the shape of what I'm trying to build. I'll go through ten, sometimes fifteen drafts before I feel like I've gotten close to what the story needs to be. And even then, I'm never entirely satisfied. There's always a gap between the vision in your head and what ends up on the page.
+                </p>
+
+                <p class="interview-q font-serif text-xl">How do you know when a piece is finished?</p>
+                <p class="interview-a text-gray-700">
+                    You don't, really. At some point, you just have to let it go. There's a moment when you realize that any further changes would just be different, not better. That's when I know it's time to release it into the world. It's terrifying, to be honest. You spend so much time with these characters, these worlds, and then suddenly they don't belong to you anymore. They belong to the reader. And the reader will inevitably see things you didn't intend, miss things you thought were obvious, and find meaning in places you never imagined.
+                </p>
+
+                <p class="interview-q font-serif text-xl">What role does research play in your fiction?</p>
+                <p class="interview-a text-gray-700">
+                    It depends on the project. For historical fiction or stories that require specific technical knowledge, research is essential. But I've also learned that you can over-research to the point where it becomes procrastination. You can spend so much time gathering information that you never actually write the story. I try to do enough research to feel confident in the world I'm creating, but not so much that I lose the imaginative spark. Sometimes the most interesting fiction comes from getting the facts slightly wrong—or at least bending them to serve the emotional truth of the story.
+                </p>
+
+                <p class="interview-q font-serif text-xl">What advice would you give to emerging writers?</p>
+                <p class="interview-a text-gray-700">
+                    Read voraciously and write consistently. Those are the two non-negotiables. But beyond that, I'd say: be patient with yourself. Writing is a practice, not a performance. You're not going to produce a masterpiece on your first try, or your tenth, or maybe even your hundredth. What matters is that you keep showing up, keep putting words on the page, keep learning from your failures. And find your community—other writers who understand the struggle and can support you through it. This work is too hard to do alone.
+                </p>
+
+                <div class="divider"></div>
+
+                <p class="text-gray-700 italic">
+                    Jane Doe's latest novel, "The Architecture of Silence," will be published next spring by Henar Press.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-gray-300">
+            <a href="index.html" class="back-link text-sm uppercase tracking-widest text-gray-600 hover:text-black transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Home
+            </a>
+        </div>
+    </article>
+
+    <footer class="border-t border-gray-300 mt-24 py-12 px-6 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div class="flex items-center gap-2.5">
+                    <span class="text-2xl font-oswald font-semibold tracking-wide uppercase text-black">
+                        DAWESHÊ
+                    </span>
+                    <img src="sun.png" alt="Kurdish Sun" class="h-6 w-auto">
+                    <span class="text-2xl font-amiri font-bold text-black" style="letter-spacing: 0.02em;" dir="rtl">
+                        داوەشێی
+                    </span>
+                </div>
+                <div class="text-sm text-gray-600">
+                    <p>Published by <a href="https://henarpress.org" class="hover:text-black transition-colors">Henar Press</a></p>
+                    <p class="mt-1">© 2025 All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menuOverlay = document.getElementById('menu-overlay');
+
+    menuBtn.addEventListener('click', () => {
+        menuOverlay.classList.toggle('open');
+        menuBtn.classList.toggle('menu-open');
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuOverlay.classList.contains('open')) {
+            menuOverlay.classList.remove('open');
+            menuBtn.classList.remove('menu-open');
+        }
+    });
+</script>
+</body>
+</html>
