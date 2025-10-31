@@ -32,19 +32,13 @@
         }
 
         .main-container {
-            border: 6px solid #000;
+            border: 8px solid #000;
             height: 100vh;
             overflow: hidden;
             background-color: #f5f5f5;
             display: flex;
             flex-direction: column;
             position: relative;
-        }
-
-        @media (min-width: 768px) {
-            .main-container {
-                border-width: 8px;
-            }
         }
 
         .font-serif {
@@ -68,22 +62,15 @@
 
         .wavy-text-container {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-25deg);
-            width: 150vw;
+            top: 45%;
+            left: -10%;
+            width: 120%;
             z-index: 0;
+            transform: rotate(-25deg);
             pointer-events: none;
             opacity: 0.85;
             overflow: visible;
             padding: 60px 0;
-        }
-
-        @media (max-width: 768px) {
-            .wavy-text-container {
-                width: 200vw;
-                transform: translate(-50%, -50%) rotate(-20deg);
-            }
         }
         
         .marquee {
@@ -95,7 +82,7 @@
         
         .marquee-word {
             font-family: 'Lora', serif;
-            font-size: clamp(3rem, 5vw, 5rem);
+            font-size: 5rem;
             font-style: italic;
             color: #383838;
             white-space: nowrap;
@@ -121,17 +108,6 @@
             }
             50% {
                 transform: translateY(-35px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            @keyframes wave-anim {
-                0%, 100% {
-                    transform: translateY(0px);
-                }
-                50% {
-                    transform: translateY(-20px);
-                }
             }
         }
 
@@ -189,35 +165,6 @@
         #search-input:focus {
             outline: none;
         }
-
-        .header-logo-text {
-            font-size: clamp(1.5rem, 4vw, 3rem);
-        }
-
-        .header-logo-arabic {
-            font-size: clamp(1.5rem, 4vw, 3rem);
-        }
-
-        .header-logo-icon {
-            height: clamp(1.5rem, 3.5vw, 2.5rem);
-        }
-
-        .article-card {
-            width: clamp(280px, 30vw, 320px);
-        }
-
-        .article-image-container {
-            height: clamp(320px, 35vw, 360px);
-        }
-
-        @media (max-width: 640px) {
-            .article-card {
-                width: 280px;
-            }
-            .article-image-container {
-                height: 360px;
-            }
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -230,28 +177,28 @@
     </div>
 
     <header class="z-50 border-b border-gray-300 bg-[#f5f5f5] relative">
-        <div class="px-4 sm:px-6 md:px-8">
-            <div class="flex justify-between items-center h-20 md:h-24">
-                <div class="flex items-center gap-2">
-                    <span class="header-logo-text font-oswald font-semibold tracking-wide uppercase text-black">
+        <div class="px-6 md:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center gap-2.5">
+                    <span class="text-3xl md:text-5xl font-oswald font-semibold tracking-wide uppercase text-black">
                         DAWESHÊ
                     </span>
-                    <img src="sun.png" alt="Kurdish Sun" class="header-logo-icon w-auto">
-                    <span class="header-logo-arabic font-amiri font-bold text-black" style="letter-spacing: 0.02em;" dir="rtl">
+                    <img src="sun.png" alt="Kurdish Sun" class="h-8 md:h-10 w-auto">
+                    <span class="text-3xl md:text-5xl font-amiri font-bold text-black" style="letter-spacing: 0.02em;" dir="rtl">
                         داوەشێی
                     </span>
                 </div>
                 
-                <div class="flex items-center space-x-4 md:space-x-6">
+                <div class="flex items-center space-x-6">
                     <button id="search-btn" aria-label="Search" class="text-black hover:opacity-70 transition-opacity">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </button>
                     <button id="menu-btn" class="z-50 space-y-2" aria-label="Open Menu">
-                        <span class="block w-7 md:w-8 h-0.5 bg-black menu-line line-1"></span>
-                        <span class="block w-7 md:w-8 h-0.5 bg-black menu-line line-2"></span>
-                        <span class="block w-7 md:w-8 h-0.5 bg-black menu-line line-3"></span>
+                        <span class="block w-8 h-0.5 bg-black menu-line line-1"></span>
+                        <span class="block w-8 h-0.5 bg-black menu-line line-2"></span>
+                        <span class="block w-8 h-0.5 bg-black menu-line line-3"></span>
                     </button>
                 </div>
             </div>
@@ -260,30 +207,30 @@
 
     <div id="search-overlay" class="fixed inset-0 bg-white z-50">
         <div class="h-full flex flex-col">
-            <div class="border-b border-gray-300 px-4 sm:px-6 md:px-8 py-4 md:py-6">
-                <div class="flex items-center gap-3 md:gap-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <div class="border-b border-gray-300 px-6 md:px-8 py-6">
+                <div class="flex items-center gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                     <input 
                         type="text" 
                         id="search-input" 
                         placeholder="Search"
-                        class="flex-1 text-xl md:text-2xl font-serif bg-transparent border-none"
+                        class="flex-1 text-2xl font-serif bg-transparent border-none"
                         autocomplete="off"
                     >
                     <button id="close-search" class="text-gray-600 hover:text-black transition-colors" aria-label="Close Search">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
             </div>
 
-            <div class="flex-1 overflow-y-auto px-4 sm:px-6 md:px-8 py-6 md:py-8">
+            <div class="flex-1 overflow-y-auto px-6 md:px-8 py-8">
                 <div id="search-results"></div>
                 <div id="no-results" class="hidden text-center py-16">
-                    <p class="text-gray-500 text-base md:text-lg font-serif">No results found</p>
+                    <p class="text-gray-500 text-lg font-serif">No results found</p>
                 </div>
                 <div id="initial-state" class="text-center py-16">
                 </div>
@@ -292,88 +239,88 @@
     </div>
 
     <div id="menu-overlay" class="fixed inset-0 bg-[#111111] text-white flex items-center justify-center">
-        <nav class="text-center px-4">
-            <ul class="space-y-4 md:space-y-6">
-                <li><a href="#" class="text-3xl sm:text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">Masthead</a></li>
-                <li><a href="#" class="text-3xl sm:text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">About</a></li>
-                <li><a href="#" class="text-3xl sm:text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">Issues</a></li>
-                <li><a href="#" class="text-3xl sm:text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">People</a></li>
-                <li><a href="#" class="text-3xl sm:text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">Submissions</a></li>
+        <nav class="text-center">
+            <ul class="space-y-6">
+                <li><a href="#" class="text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">Masthead</a></li>
+                <li><a href="#" class="text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">About</a></li>
+                <li><a href="#" class="text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">Issues</a></li>
+                <li><a href="#" class="text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">People</a></li>
+                <li><a href="#" class="text-4xl md:text-6xl font-bold uppercase tracking-wider hover:opacity-70 transition-opacity duration-300">Submissions</a></li>
             </ul>
         </nav>
     </div>
 
-    <div class="flex flex-1 overflow-hidden px-4 sm:px-6 md:px-8 py-8 md:py-12 relative">
-        <aside class="w-20 md:w-24 flex-shrink-0 hidden md:block relative z-10">
+    <div class="flex flex-1 overflow-hidden px-6 md:px-8 py-12 relative">
+        <aside class="w-24 flex-shrink-0 hidden md:block relative z-10">
             <div class="sticky top-24">
-                <div class="sidebar text-xs md:text-sm uppercase tracking-widest text-gray-400">
+                <div class="sidebar text-sm uppercase tracking-widest text-gray-400">
                     <a href="https://henarpress.org" class="hover:text-black transition-colors">Henar Press</a>
                 </div>
             </div>
         </aside>
 
         <main class="w-full h-full">
-            <div class="flex flex-nowrap overflow-x-auto gap-8 md:gap-12 lg:gap-16 p-4 snap-x snap-mandatory horizontal-scroll-container h-full">
+            <div class="flex flex-nowrap overflow-x-auto gap-12 md:gap-16 p-4 snap-x snap-mandatory horizontal-scroll-container h-full">
                 
-                <article class="flex-shrink-0 article-card snap-start" data-category="fiction" data-title="The City That Dreams in Our Bones" data-author="Gloria Ogo">
-                    <a href="#" class="block overflow-hidden mb-3 border border-gray-200 article-image-container">
-                        <img src="https://placehold.co/600x800/e2e8f0/334155?text=Cover+Art" alt="Cover art for The City That Dreams in Our Bones" class="w-full h-full object-cover">
+                <article class="flex-shrink-0 w-[35vh] snap-start" data-category="fiction" data-title="The City That Dreams in Our Bones" data-author="Gloria Ogo">
+                    <a href="#" class="block overflow-hidden mb-3 border border-gray-200 h-[45vh]">
+                        <img src="https://placehold.co/600x800/e2e8f0/334155?text=Cover+Art" alt="Cover art for The City That Dreams in Our Bones" class="w-full h-full object-cover ">
                     </a>
                     <h3 class="font-serif text-xs text-gray-500 uppercase tracking-widest">Fiction</h3>
-                    <h2 class="font-serif text-lg md:text-xl mt-1 mb-1 leading-tight">
+                    <h2 class="font-serif text-xl mt-1 mb-1 leading-tight">
                         <a href="#" class="hover:underline">The City That Dreams in Our Bones</a>
                     </h2>
                     <p class="text-sm text-gray-600">by Gloria Ogo</p>
                 </article>
 
-                <article class="flex-shrink-0 article-card snap-start" data-category="poetry" data-title="Point of Focus" data-author="Aliseen Anne">
-                    <a href="#" class="block overflow-hidden mb-3 border border-gray-200 article-image-container">
-                        <img src="https://placehold.co/600x800/d1d5db/1f2937?text=Cover+Art" alt="Cover art for Point of Focus" class="w-full h-full object-cover">
+                <article class="flex-shrink-0 w-[35vh] snap-start" data-category="poetry" data-title="Point of Focus" data-author="Aliseen Anne">
+                    <a href="#" class="block overflow-hidden mb-3 border border-gray-200 h-[45vh]">
+                        <img src="https://placehold.co/600x800/d1d5db/1f2937?text=Cover+Art" alt="Cover art for Point of Focus" class="w-full h-full object-cover ">
                     </a>
                     <h3 class="font-serif text-xs text-gray-500 uppercase tracking-widest">Poetry</h3>
-                    <h2 class="font-serif text-lg md:text-xl mt-1 mb-1 leading-tight">
+                    <h2 class="font-serif text-xl mt-1 mb-1 leading-tight">
                         <a href="#" class="hover:underline">Point of Focus</a>
                     </h2>
                     <p class="text-sm text-gray-600">by Aliseen Anne</p>
                 </article>
 
-                <article class="flex-shrink-0 article-card snap-start" data-category="nonfiction" data-title="The Fourteenth Amendment" data-author="Mervyn Seivwright">
-                    <a href="#" class="block overflow-hidden mb-3 border border-gray-200 article-image-container">
-                        <img src="https://placehold.co/600x800/9ca3af/111827?text=Cover+Art" alt="Cover art for Fourteenth Amendment" class="w-full h-full object-cover">
+                <article class="flex-shrink-0 w-[35vh] snap-start" data-category="nonfiction" data-title="The Fourteenth Amendment" data-author="Mervyn Seivwright">
+                    <a href="#" class="block overflow-hidden mb-3 border border-gray-200 h-[45vh]">
+                        <img src="https://placehold.co/600x800/9ca3af/111827?text=Cover+Art" alt="Cover art for Fourteenth Amendment" class="w-full h-full object-cover ">
                     </a>
                     <h3 class="font-serif text-xs text-gray-500 uppercase tracking-widest">Nonfiction</h3>
-                    <h2 class="font-serif text-lg md:text-xl mt-1 mb-1 leading-tight">
+                    <h2 class="font-serif text-xl mt-1 mb-1 leading-tight">
                         <a href="#" class="hover:underline">The Fourteenth Amendment</a>
                     </h2>
                     <p class="text-sm text-gray-600">by Mervyn Seivwright</p>
                 </article>
 
-                <article class="border border-gray-200 p-5 flex flex-col justify-center flex-shrink-0 article-card article-image-container snap-start" data-category="interview" data-title="On Craft and Creation" data-author="Jane Doe">
+                <article class="border border-gray-200 p-5 flex flex-col justify-center flex-shrink-0 w-[35vh] snap-start h-[45vh]" data-category="interview" data-title="On Craft and Creation" data-author="Jane Doe">
                     <h3 class="font-serif text-xs text-gray-500 uppercase tracking-widest">Interview</h3>
-                    <h2 class="font-serif text-lg md:text-xl mt-1 mb-1 leading-tight">
+                    <h2 class="font-serif text-xl mt-1 mb-1 leading-tight">
                         <a href="#" class="hover:underline">On Craft and Creation</a>
                     </h2>
                     <p class="text-sm text-gray-600 mb-3">with Author Jane Doe</p>
                     <p class="text-sm text-gray-700 leading-relaxed">"The process is less about finding the right words and more about listening to..."</p>
                 </article>
 
-                <article class="flex-shrink-0 article-card snap-start" data-category="poetry" data-title="Betrayal of Spirit" data-author="John Smith">
-                    <a href="#" class="block overflow-hidden mb-3 border border-gray-200 article-image-container">
-                        <img src="https://placehold.co/600x800/f3f4f6/4b5563?text=Cover+Art" alt="Cover art for New Release" class="w-full h-full object-cover">
+                <article class="flex-shrink-0 w-[35vh] snap-start" data-category="poetry" data-title="Betrayal of Spirit" data-author="John Smith">
+                    <a href="#" class="block overflow-hidden mb-3 border border-gray-200 h-[45vh]">
+                        <img src="https://placehold.co/600x800/f3f4f6/4b5563?text=Cover+Art" alt="Cover art for New Release" class="w-full h-full object-cover ">
                     </a>
                     <h3 class="font-serif text-xs text-gray-500 uppercase tracking-widest">Poetry</h3>
-                    <h2 class="font-serif text-lg md:text-xl mt-1 mb-1 leading-tight">
+                    <h2 class="font-serif text-xl mt-1 mb-1 leading-tight">
                         <a href="#" class="hover:underline">Betrayal of Spirit</a>
                     </h2>
                     <p class="text-sm text-gray-600">by John Smith</p>
                 </article>
 
-                <article class="flex-shrink-0 article-card snap-start" data-category="fiction" data-title="Real Fruit" data-author="Emily White">
-                    <a href="#" class="block overflow-hidden mb-3 border border-gray-200 article-image-container">
-                        <img src="https://placehold.co/600x800/e5e7eb/374151?text=Cover+Art" alt="Cover art for New Release" class="w-full h-full object-cover">
+                <article class="flex-shrink-0 w-[35vh] snap-start" data-category="fiction" data-title="Real Fruit" data-author="Emily White">
+                    <a href="#" class="block overflow-hidden mb-3 border border-gray-200 h-[45vh]">
+                        <img src="https://placehold.co/600x800/e5e7eb/374151?text=Cover+Art" alt="Cover art for New Release" class="w-full h-full object-cover ">
                     </a>
                     <h3 class="font-serif text-xs text-gray-500 uppercase tracking-widest">Fiction</h3>
-                    <h2 class="font-serif text-lg md:text-xl mt-1 mb-1 leading-tight">
+                    <h2 class="font-serif text-xl mt-1 mb-1 leading-tight">
                         <a href="#" class="hover:underline">Real Fruit</a>
                     </h2>
                     <p class="text-sm text-gray-600">by Emily White</p>
@@ -393,16 +340,19 @@
         { category: 'Fiction', title: 'Real Fruit', author: 'Emily White' }
     ];
 
+    // Initialize marquee with wavy effect
     function initMarquee() {
         const marquee = document.getElementById('marquee');
         const word = 'shifta';
         const repeatCount = 24;
         
+        // Create two identical sets for seamless loop
         for (let set = 0; set < 2; set++) {
             for (let i = 0; i < repeatCount; i++) {
                 const wordSpan = document.createElement('span');
                 wordSpan.className = 'marquee-word';
                 
+                // Split word into letters with wave animation
                 word.split('').forEach((char, index) => {
                     const charSpan = document.createElement('span');
                     charSpan.style.setProperty('--i', index + (i * word.length));
@@ -415,6 +365,7 @@
         }
     }
 
+    // Initialize on load
     initMarquee();
 
     window.addEventListener('load', () => {
@@ -480,7 +431,7 @@
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
                             <p class="font-serif text-xs text-gray-500 uppercase tracking-widest mb-2">${article.category}</p>
-                            <h3 class="font-serif text-xl md:text-2xl mb-2 hover:underline cursor-pointer">${article.title}</h3>
+                            <h3 class="font-serif text-2xl mb-2 hover:underline cursor-pointer">${article.title}</h3>
                             <p class="text-sm text-gray-600">by ${article.author}</p>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
