@@ -339,15 +339,6 @@
             gap: 5px;
         }
 
-        .photo-location::before {
-            content: "";
-            width: 8px;
-            height: 8px;
-            background-color: var(--yellow);
-            border: 1px solid var(--black);
-            display: inline-block;
-        }
-
         /* --- Contact Page (Bold/Minimal) --- */
         .contact-pane {
             flex: 1;
@@ -419,10 +410,10 @@
                 <section class="content-pane">
                     <div class="bio-text">
                     <p><b>Aryan Omar Hassan</b> is a publisher, writer, and book designer.</p>
-                    <p>He is the founder of <a href="#">Henar Press</a>, a nonprofit that publishes experimental Kurdish writing, and maintains the <a href="#">Kurdish literary database</a>.</p>
+                    <p>He is the founder of <a href="https://henarpress.org/">Henar Press</a>, a nonprofit that publishes experimental Kurdish writing, and maintains the <a href="https://henarpress.org/database">Kurdish literary database</a>.</p>
                     <p>Based in Columbus, he has previously lived in Oslo, Stockholm, Sulaymaniyah, Abu Dhabi, and London, and holds degrees from The Ohio State University.</p>
                     </div>
-                <a href="#" class="cta-btn">INSTAGRAM</a>
+                <a href="https://www.instagram.com/henarpress/" class="cta-btn">INSTAGRAM</a>
                 </section>
             </div>
         </main>
@@ -539,7 +530,7 @@
 
         <footer>
             <span>© 2026 ARYAN OMAR HASSAN</span>
-            <span>Bijî Kurdistan!</span>
+            <span>Bijî Kurdistan</span>
         </footer>
     </div>
 
@@ -564,6 +555,15 @@
             // Scroll to top of content
             document.getElementById('page-' + pageId).scrollTop = 0;
         }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const links = document.querySelectorAll('a[href^="http"]');
+  
+  links.forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+});
     </script>
 </body>
 </html>
