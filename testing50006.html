@@ -273,24 +273,25 @@
             background: var(--gray);
         }
 
-        .cover-item {
-            background: var(--white);
-            padding: 10px;
-            transition: transform 0.2s;
-            border: 4px solid var(--black);
-            box-shadow: 8px 8px 0px var(--black);
-        }
+    .cover-item {
+    background: var(--white);
+    padding: 10px;
+    /* Remove transition, border, and box-shadow from here */
+}
 
-        .cover-item:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0px var(--yellow);
-        }
+.cover-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 4px solid var(--black);
+    box-shadow: 8px 8px 0px var(--black);
+    transition: all 0.2s ease;
+}
 
-        .cover-item img {
-            width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-        }
+.cover-item img:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px var(--yellow);
+}
 
         .cover-info {
             margin-top: 10px;
@@ -417,7 +418,7 @@
                 </section>
                 <section class="content-pane">
                     <div class="bio-text">
-                    <p><b>Aryan Omar Hassan</b> is a publisher, short story writer, and book designer.</p>
+                    <p><b>Aryan Omar Hassan</b> is a publisher, writer, and book designer.</p>
                     <p>He is the founder of <a href="#">Henar Press</a>, a nonprofit that publishes experimental Kurdish writing, and maintains the <a href="#">Kurdish literary database</a>.</p>
                     <p>Based in Columbus, he has previously lived in Oslo, Stockholm, Sulaymaniyah, Abu Dhabi, and London, and holds degrees from The Ohio State University.</p>
                     </div>
@@ -538,7 +539,7 @@
 
         <footer>
             <span>© 2026 ARYAN OMAR HASSAN</span>
-            <span>Columbus, OH</span>
+            <span>Bijî Kurdistan!</span>
         </footer>
     </div>
 
