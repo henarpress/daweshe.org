@@ -1,574 +1,1086 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ARYAN OMAR HASSAN</title>
+
     <style>
+
         :root {
+
             --yellow: #ffeb3b;
+
             --black: #000000;
+
             --white: #ffffff;
+
             --bg-canvas: #d9d9d9;
+
         }
+
 
         * {
+
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
+
         }
 
-	body {
+
+    body {
+
             font-family: 'Courier New', monospace;
+
             background-color: var(--bg-canvas);
+
             color: var(--black);
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             min-height: 100vh;
+
             padding: 40px;
+
         }
+
 
         .site-canvas {
+
             background-color: var(--white);
+
             width: 100%;
+
             max-width: 1100px; 
+
             min-height: 800px;
+
             border: 5px solid var(--black);
+
             display: flex;
+
             flex-direction: column;
+
             position: relative;
+
             overflow: hidden; 
+
         }
+
 
         /* --- Header & Nav --- */
+
         header {
+
             padding: 2.5rem;
+
             border-bottom: 5px solid var(--black);
+
             background: var(--white);
+
             z-index: 10;
+
         }
+
 
         .header-content {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             gap: 2rem;
+
         }
+
 
         h1 {
+
             font-size: 1.8rem;
+
             font-weight: 900;
+
             letter-spacing: -1px;
+
             background-color: var(--yellow);
+
             padding: 5px 15px;
+
             border: 3px solid var(--black);
+
             text-transform: uppercase;
+
             cursor: pointer;
+
         }
+
 
         nav ul {
+
             list-style: none;
+
             display: flex;
+
             gap: 12px;
+
             flex-wrap: wrap;
+
             justify-content: flex-end;
+
         }
+
 
         nav a {
+
             text-decoration: none;
+
             color: var(--black);
+
             font-size: 0.85rem; 
+
             font-weight: 900;
+
             text-transform: uppercase;
+
             padding: 10px 15px; 
+
             border: 3px solid var(--black);
+
             background: var(--white);
+
             transition: all 0.1s;
+
             display: inline-block;
+
             cursor: pointer;
+
         }
+
 
         nav a:hover, nav a.active {
+
             background-color: var(--yellow);
+
             transform: translate(-4px, -4px);
+
             box-shadow: 4px 4px 0px var(--black);
+
         }
+
 
         /* --- Page Transitions --- */
+
         .page-section {
+
             display: none;
+
             flex: 1;
+
             overflow-y: auto;
+
             animation: fadeIn 0.3s ease-in-out;
+
         }
+
 
         .page-section.active {
+
             display: flex;
+
             flex-direction: column;
+
         }
+
 
         @keyframes fadeIn {
+
             from { opacity: 0; }
+
             to { opacity: 1; }
+
         }
+
 
         /* --- About Page (Original Layout) --- */
+
         .main-grid {
+
             display: grid;
+
             grid-template-columns: 1fr 1.2fr;
+
             height: 100%;
+
             flex: 1;
+
         }
 
-        .photo-pane {
-            border-right: 5px solid var(--black);
-            display: flex;
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center;      
-            padding: 3rem;
-            background-color: var(--gray);
-        }
+
+      .photo-pane {
+    border-right: 5px solid var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;      
+    padding: 3rem;
+    background-color: var(--white);
+}
+
 
         .img-frame {
+
             width: 100%;
+
             max-width: 320px;
+
             border: 4px solid var(--black);
+
             box-shadow: 12px 12px 0px var(--black);
+
             background: var(--white);
+
         }
+
 
         .img-frame img {
+
             width: 100%;
+
             height: auto;
+
             display: block;
+
         }
+
 
     .cta-btn {
+
             display: inline-block;
+
             padding: 12px 25px;
+
             background-color: var(--white);
+
             color: var(--black);
+
             text-decoration: none;
+
             font-weight: 900;
+
             text-transform: uppercase;
+
             letter-spacing: 1px;
+
             width: fit-content;
+
             border: 3px solid var(--black);
+
             transition: all 0.1s;
+
         }
+
 
         .cta-btn:hover {
+
             background-color: var(--yellow);
+
             transform: translate(-4px, -4px);
+
             box-shadow: 4px 4px 0px var(--black);
+
         }
+
 
         .content-pane {
+
             padding: 4rem;
+
             display: flex;
+
             flex-direction: column;
+
             justify-content: center;
+
         }
+
 
       .bio-text {
+
             font-size: 1.1rem;
+
             line-height: 1.7;
+
             margin-bottom: 2rem;
+
         }
+
 
         .bio-text p {
+
             margin-bottom: 1.5rem;
+
         }
+
 
         .bio-text a {
+
             color: var(--black);
+
             font-weight: 900;
+
             text-decoration: none;
+
             border-bottom: 3px solid var(--yellow);
+
         }
+
 
         .bio-text a:hover {
+
             background-color: var(--yellow);
+
         }
+
 
         /* --- Writing Page (Index Style) --- */
+
         .writing-container {
+
             padding: 4rem;
+
         }
+
 
 /* --- Writing Sub-Sections --- */
+
 .writing-section-title {
+
     font-size: 1.1rem;
+
     font-weight: 900;
+
     text-transform: uppercase;
+
     background: var(--black);
+
     color: var(--yellow);
+
     padding: 8px 15px;
+
     margin: 3rem 0 1rem 0; /* Adds space above each new category */
+
     display: inline-block;
+
     letter-spacing: 1px;
+
 }
+
 
 .writing-container .writing-section-title:first-child {
+
     margin-top: 0;
+
 }
 
+
         .writing-item {
+
             display: grid;
+
             grid-template-columns: 100px 1fr 150px;
+
             padding: 1.5rem 0;
+
             border-bottom: 2px solid var(--black);
+
             text-decoration: none;
+
             color: var(--black);
+
         }
+
 
         .writing-item:hover {
+
             background: var(--yellow);
+
         }
+
 
         .writing-item .year { font-weight: 900; }
+
         .writing-item .title { font-weight: 900; text-transform: uppercase; }
+
         .writing-item .pub { text-align: right; font-style: italic; font-size: 0.9rem; }
 
+
         /* --- Events Page (Newsprint Style) --- */
+
         .events-grid {
+
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
+
             gap: 0;
+
             flex: 1;
+
         }
 
+
         .event-card {
+
             padding: 3rem;
+
             border-right: 2px solid var(--black);
+
             border-bottom: 2px solid var(--black);
+
         }
+
 
         .event-card:nth-child(2n) { border-right: none; }
 
+
         .event-date {
+
             background: var(--black);
+
             color: var(--yellow);
+
             display: inline-block;
+
             padding: 4px 10px;
+
             font-size: 0.8rem;
+
             margin-bottom: 1rem;
+
         }
+
 
         .event-title {
+
             font-size: 1.4rem;
+
             font-weight: 900;
+
             margin-bottom: 1rem;
+
             text-transform: uppercase;
+
         }
+
 
         /* --- Covers Page (Gallery Grid) --- */
+
         .covers-grid {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
             gap: 2rem;
+
             padding: 3rem;
+
             background: var(--gray);
+
         }
+
 
     .cover-item {
+
     background: var(--white);
+
     padding: 10px;
+
     /* Remove transition, border, and box-shadow from here */
+
 }
+
 
 .cover-item img {
+
     width: 100%;
+
     height: auto;
+
     display: block;
+
     border: 4px solid var(--black);
+
     box-shadow: 8px 8px 0px var(--black);
+
     transition: all 0.2s ease;
+
 }
+
 
 .cover-item img:hover {
+
     transform: translate(-4px, -4px);
+
     box-shadow: 12px 12px 0px var(--yellow);
+
 }
 
+
         .cover-info {
+
             margin-top: 10px;
+
             font-weight: 900;
+
             font-size: 0.75rem;
+
             text-transform: uppercase;
+
         }
+
 
      /* --- Photography (Grid Gallery) --- */
+
         .photography-grid {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
             gap: 3rem;
+
             padding: 3rem;
+
             background: var(--white);
+
         }
+
 
         .photography-item {
+
             display: flex;
+
             flex-direction: column;
+
             gap: 12px;
+
         }
+
 
         .photography-item img {
+
             width: 100%;
+
             height: auto;
+
             display: block;
+
             border: 4px solid var(--black);
+
             box-shadow: 8px 8px 0px var(--black);
+
             transition: all 0.2s ease;
+
         }
+
 
         .photography-item img:hover {
+
             transform: translate(-4px, -4px);
+
             box-shadow: 12px 12px 0px var(--yellow);
+
         }
+
 
         .photo-location {
+
             font-weight: 900;
+
             font-size: 0.8rem;
+
             text-transform: uppercase;
+
             letter-spacing: 1px;
+
             display: flex;
+
             align-items: center;
+
             gap: 5px;
+
         }
+
 
         /* --- Contact Page (Bold/Minimal) --- */
+
         .contact-pane {
+
             flex: 1;
+
             display: flex;
+
             flex-direction: column;
+
             justify-content: center;
+
             align-items: center;
+
             text-align: center;
+
             background: var(--yellow);
+
         }
+
 
         .contact-email {
+
             font-size: 2.5rem;
+
             font-weight: 900;
+
             text-decoration: none;
+
             color: var(--black);
+
             border-bottom: 8px solid var(--black);
+
             padding-bottom: 10px;
+
         }
+
 
         /* --- Footer --- */
+
         footer {
+
             padding: 1.2rem 2.5rem;
+
             border-top: 5px solid var(--black);
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             background: var(--white);
+
             font-weight: 900;
+
             font-size: 0.75rem;
+
             text-transform: uppercase;
+
         }
 
-        @media (max-width: 950px) {
-            .main-grid, .events-grid { grid-template-columns: 1fr; }
-            .event-card { border-right: none; }
-            .writing-item { grid-template-columns: 1fr; gap: 5px; }
-            .writing-item .pub { text-align: left; }
-            .contact-email { font-size: 1.2rem; }
-        }
+
+@media (max-width: 600px) {
+    .main-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .photo-pane { 
+        border-right: none; /* Removes the divide on mobile */
+        border-bottom: 5px solid var(--black); /* Optional: adds divide between top/bottom instead of side/side */
+        padding: 2rem;
+    }
+
+    .content-pane {
+        padding: 2rem;
+    }
+
+    .events-grid { grid-template-columns: 1fr; }
+    .writing-item { grid-template-columns: 1fr; gap: 5px; }
+    .writing-item .pub { text-align: left; }
+    .contact-email { font-size: 1.2rem; }
+}
+
+@media (max-width: 950px) and (min-width: 601px) {
+    .events-grid { grid-template-columns: 1fr; }
+    .writing-item { grid-template-columns: 1fr; }
+}
+
     </style>
+
 </head>
+
 <body>
 
+
     <div class="site-canvas">
+
         <header>
+
             <div class="header-content">
+
                 <h1 onclick="showPage('about')">ARYAN OMAR HASSAN</h1>
+
                 <nav>
+
                     <ul>
+
                         <li><a onclick="showPage('about')" id="nav-about" class="active">ABOUT</a></li>
+
                         <li><a onclick="showPage('writing')" id="nav-writing">WRITING</a></li>
+
                         <li><a onclick="showPage('events')" id="nav-events">EVENTS</a></li>
+
                         <li><a onclick="showPage('covers')" id="nav-covers">COVERS</a></li>
+
                         <li><a onclick="showPage('photography')" id="nav-photography">PHOTOGRAPHY</a></li>
+
                         <li><a onclick="showPage('contact')" id="nav-contact">CONTACT</a></li>
+
                     </ul>
+
                 </nav>
+
             </div>
+
         </header>
 
+
         <main id="page-about" class="page-section active">
+
             <div class="main-grid">
+
                 <section class="photo-pane">
+
                     <div class="img-frame">
+
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop" alt="Aryan">
+
                     </div>
+
                 </section>
+
                 <section class="content-pane">
+
                     <div class="bio-text">
+
                     <p><b>Aryan Omar Hassan</b> is a publisher, editor, writer, and book designer.</p>
+
                     <p>He is the founder of <a href="https://henarpress.org/">Henar Press</a>, a nonprofit that publishes experimental Kurdish writing, and maintains the <a href="https://henarpress.org/database">Kurdish literary database</a>.</p>
+
                     <p>Based in Columbus, he has previously lived in Oslo, Stockholm, Sulaymaniyah, Abu Dhabi, and London, and holds degrees from The Ohio State University.</p>
+
                     </div>
+
                 <a href="https://www.instagram.com/henarpress/" class="cta-btn">INSTAGRAM</a>
+
                 </section>
+
             </div>
+
         </main>
+
 
      <main id="page-writing" class="page-section">
+
     <div class="writing-container">
+
          <h2 class="writing-section-title">Fiction</h2>
+
         <a href="https://www.midcult.net/the-volvo-chronicle-aryan-omar-hassan" class="writing-item">
+
             <span class="year">DEC 2025</span>
+
             <span class="title">The Volvo Chronicle: Or, the Modern Permutation of the 1932 Emu War</span>
+
             <span class="pub">Midcult*</span>
+
         </a>
+
         <h2 class="writing-section-title">Essays</h2>
+
         <a href="#" class="writing-item">
+
             <span class="year">MAY 2026</span>
+
             <span class="title">The Concrete Garden of Sulaymaniyah</span>
+
             <span class="pub">The New Yorker</span>
+
         </a>
+
 
         <h2 class="writing-section-title">Reviews</h2>
+
         <a href="https://themarkaz.org/agri-ismails-hyper-is-a-21st-century-kurdish-crucible/" class="writing-item">
+
             <span class="year">NOV 2025</span>
+
             <span class="title">Agri Ismaïl’s Hyper is a 21st Century Kurdish Crucible</span>
+
             <span class="pub">The Markaz Review</span>
+
         </a>
+
  <h2 class="writing-section-title">Interviews</h2>
+
         <a href="https://themarkaz.org/agri-ismails-hyper-is-a-21st-century-kurdish-crucible/" class="writing-item">
+
             <span class="year">NOV 2025</span>
+
             <span class="title">A New Look at Kurdish Literature, Beyond the ‘Selfless, Helpless’ Trope</span>
+
             <span class="pub">ArabLit</span>
+
 </a>
+
      <a href="https://matternews.org/culture/words/aryan-omar-hassan-finds-his-way-home-with-henar-press/" class="writing-item">
+
             <span class="year">OCT 2025</span>
+
             <span class="title">Aryan Omar Hassan Finds His Way Home With Henar Press</span>
+
             <span class="pub">Matter News</span>
+
 </a>       
+
 <a href="https://www.inforum.com/news/moorhead/moorhead-residents-applaud-newly-opened-publisher-of-kurdish-literature-in-ohio" class="writing-item">
+
     <span class="year">SEP 2024</span>
+
     <span class="title">Moorhead residents applaud newly opened publisher of Kurdish literature in Ohio</span>
+
     <span class="pub">InForum</span>
+
 </a>
+
 </div>
+
 </main>
 
+
         <main id="page-events" class="page-section">
+
             <div class="events-grid">
+
                 <div class="event-card">
+
                     <span class="event-date">MARCH 12, 2026</span>
+
                     <div class="event-title">Experimental Typography Workshop</div>
+
                     <p>Columbus Center for the Arts. A deep dive into Kurdish script and modern design.</p>
+
                 </div>
+
                 <div class="event-card">
+
                     <span class="event-date">APRIL 05, 2026</span>
+
                     <div class="event-title">Henar Press Launch Party</div>
+
                     <p>Celebration of our new anthology. Readings by various authors.</p>
+
                 </div>
+
                 <div class="event-card">
+
                     <span class="event-date">MAY 20, 2026</span>
+
                     <div class="event-title">London Book Fair Panel</div>
+
                     <p>Speaking on "Independent Publishing in the Middle East".</p>
+
                 </div>
+
                 <div class="event-card">
+
                     <span class="event-date">JUNE 15, 2026</span>
+
                     <div class="event-title">Short Story Intensive</div>
+
                     <p>Sulaymaniyah Cultural Center. A weekend workshop for emerging writers.</p>
+
                 </div>
+
             </div>
+
         </main>
+
 
         <main id="page-covers" class="page-section">
+
             <div class="covers-grid">
+
                 <div class="cover-item">
+
                     <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop" alt="Cover 1">
+
                     <div class="cover-info">The Last Echo / 2024</div>
+
                 </div>
+
                 <div class="cover-item">
+
                     <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=400&h=600&fit=crop" alt="Cover 2">
+
                     <div class="cover-info">Henar Press Anthol / 2025</div>
+
                 </div>
+
                 <div class="cover-item">
+
                     <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=600&fit=crop" alt="Cover 3">
+
                     <div class="cover-info">Modern Kurdish Prose / 2023</div>
+
                 </div>
+
             </div>
+
         </main>
+
 
      <main id="page-photography" class="page-section">
+
             <div class="photography-grid">
+
                 <div class="photography-item">
+
                     <img src="https://images.unsplash.com/photo-1449156001446-515b7c798667?w=1000&h=800&fit=crop" alt="Photography">
+
                     <span class="photo-location">SULAYMANIYAH, KURDISTAN</span>
+
                 </div>
 
+
                 <div class="photography-item">
+
                     <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1000&h=800&fit=crop" alt="Photography">
+
                     <span class="photo-location">OSLO, NORWAY</span>
+
                 </div>
 
+
                 <div class="photography-item">
+
                     <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&h=800&fit=crop" alt="Photography">
+
                     <span class="photo-location">STOKKHOLM, SWEDEN</span>
+
                 </div>
+
 
                 <div class="photography-item">
+
                     <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1000&h=800&fit=crop" alt="Photography">
+
                     <span class="photo-location">ABU DHABI, UAE</span>
-                </div>
 
                 </div>
+
+
+                </div>
+
         </main>
+
 
         <main id="page-contact" class="page-section">
+
             <div class="contact-pane">
+
                 <p style="text-transform: uppercase; font-weight: 900; margin-bottom: 2rem;">Inquiries & Collaborations</p>
+
                 <a href="mailto:aryan.hassan@henarpress.org" class="contact-email">ARYAN.HASSAN {at} HENARPRESS {dot} ORG
+
 </a>
+
             </div>
+
         </main>
 
+
         <footer>
+
             <span>© 2026 ARYAN OMAR HASSAN</span>
+
             <span>Bijî Kurdistan</span>
+
         </footer>
+
     </div>
 
+
     <script>
+
         function showPage(pageId) {
+
             // Hide all pages
+
             document.querySelectorAll('.page-section').forEach(section => {
+
                 section.classList.remove('active');
+
             });
+
             
+
             // Deactivate all nav links
+
             document.querySelectorAll('nav a').forEach(link => {
+
                 link.classList.remove('active');
+
             });
+
 
             // Show current page
+
             document.getElementById('page-' + pageId).classList.add('active');
+
             
+
             // Activate current nav link
+
             document.getElementById('nav-' + pageId).classList.add('active');
 
+
             // Scroll to top of content
+
             document.getElementById('page-' + pageId).scrollTop = 0;
+
         }
 
+
 document.addEventListener('DOMContentLoaded', function() {
+
   const links = document.querySelectorAll('a[href^="http"]');
+
   
+
   links.forEach(link => {
+
     link.setAttribute('target', '_blank');
+
     link.setAttribute('rel', 'noopener noreferrer');
+
   });
+
 });
+
     </script>
+
 </body>
+
 </html>
